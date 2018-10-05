@@ -96,7 +96,7 @@ def checkout(cart, coupons)
     end 
   end 
 
-                      
+               binding.pry           
   #if statement to determine if cart total > $100, if yes apply 10% discount.
   if (total_cost > 100)
     total_cost = (total_cost*0.9)
