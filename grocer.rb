@@ -83,15 +83,15 @@ def checkout(cart, coupons)
 
   #apply coupon method
   cart = apply_coupons(cart, coupons)
-                 binding.pry   
+  
   #apply clearance
   cart = apply_clearance(cart)
 
   #iterate through cart, increment total_cost by item price
   cart.each do |item, item_values|
     item_values.each do |char, char_value|
-      if char == :price
-        total_cost += char_value
+      if char == :count
+        total_cost += (cart[item][:price] * char_value)
       end 
     end 
   end 
