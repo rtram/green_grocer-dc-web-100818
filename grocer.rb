@@ -39,7 +39,6 @@ def apply_coupons(cart, coupons)
       if (cart.keys.include? (n[:item])) 
         
         #see if cart qty is > coupon qty
-        if cart[n[:item]][count] > n[:num] 
         
           #decrease cart item quantity
           cart[n[:item]][:count] -= n[:num]
@@ -55,7 +54,7 @@ def apply_coupons(cart, coupons)
           coupon_hash["#{n[:item]} W/COUPON"] = {:price => n[:cost], :clearance => cart[n[:item]][:clearance], :count => 1}
           cart = cart.merge(coupon_hash)
           end
-        end 
+        
       else 
         return cart
       end 
