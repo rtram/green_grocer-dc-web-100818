@@ -42,16 +42,16 @@ def apply_coupons(cart, coupons)
         cart[n[:item]][:count] -= n[:num]
 
         
-        #see if we need to add coupon line item to cart or increase existing coupon line item
-        if cart.keys.include? ("#{n[:item]} W/COUPON")
-          
-          cart["#{n[:item]} W/COUPON"][:count] += 1
-        else 
-        #convert coupon structure to cart_hash structure and merge into cart
-        coupon_hash = {}
-        coupon_hash["#{n[:item]} W/COUPON"] = {:price => n[:cost], :clearance => cart[n[:item]][:clearance], :count => 1}
-        cart = cart.merge(coupon_hash)
-        end
+          #see if we need to add coupon line item to cart or increase existing coupon line item
+          if cart.keys.include? ("#{n[:item]} W/COUPON")
+            
+            cart["#{n[:item]} W/COUPON"][:count] += 1
+          else 
+          #convert coupon structure to cart_hash structure and merge into cart
+          coupon_hash = {}
+          coupon_hash["#{n[:item]} W/COUPON"] = {:price => n[:cost], :clearance => cart[n[:item]][:clearance], :count => 1}
+          cart = cart.merge(coupon_hash)
+          end
       else 
         return cart
       end 
