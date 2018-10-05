@@ -100,6 +100,6 @@ def checkout(cart, coupons)
   if (total_cost > 100)
     total_cost = (total_cost*0.9)
   end 
-                 binding.pry   
+
   total_cost
 end
