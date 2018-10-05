@@ -63,8 +63,8 @@ end
 
 def apply_clearance(cart)
   #iterate through cart.
-  cart.each do |item, item_values|
-    item_values.each do |char, char_value|
+  cart.collect! do |item, item_values|
+    item_values.collect! do |char, char_value|
   
   #if statement to determine clearance item
       if (char == :clearance && char_value == true)
