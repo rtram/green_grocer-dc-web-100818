@@ -81,6 +81,7 @@ def checkout(cart, coupons)
   #call consolidate_cart method
   cart = consolidate_cart(cart)
 
+                 binding.pry   
   #apply coupon method
   cart = apply_coupons(cart, coupons)
 
